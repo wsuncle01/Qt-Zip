@@ -5,14 +5,17 @@
 ## 主要函数：
 `
 void zip::addfile(QString path,QString data);//path是你希望data在压缩文件中存放的位置，data是你需要压缩的数据（本代码中没有压缩，只是单纯将文件放在一起）
+`
+`
 void zip::zipfile(QString OutPutPath);//OutPutPath是输出文件名
 `
+
 
 ## 不足之处
 
 1.本文未对数据进行压缩，只是将文件放在了一起。如果需要压缩，那么则可能需要需要改一部分代码。
-    formlocalFile()中对18-21byte偏移处以及formcentralDir()中对20-23btye偏移处，即文件压缩后大小的代码需要修改。
-    formlocalFile()中对8-11byte偏移处以及formcentralDir()中对10-13btye偏移处，即压缩方法标识符的代码需要修改。
+    `formlocalFile()`中对18-21byte偏移处以及`formcentralDir()`中对20-23btye偏移处，即文件压缩后大小的代码需要修改。
+    `formlocalFile()`中对8-11byte偏移处以及`formcentralDir()`中对10-13btye偏移处，即压缩方法标识符的代码需要修改。
     当然数据文本也要每个单独压缩，这个qt似乎有现成的库函数可以使用。
 
 2.本人并没有完全搞清楚central directory file中外部文件属性&内部文件属性字段的真实含义，所以在生成的时候都设置为了0。
@@ -26,7 +29,8 @@ This project is mainly a code I wrote myself as a last resort when I couldn't su
 ## Main Functions:
 ---------------
 
-`void zip::addfile(QString path, QString data); // path is the location where you want to store the data in the compressed file, and data is the data you want to compress (in this code, there is no compression, just putting the files together). void zip::zipfile(QString OutPutPath); // OutPutPath is the output file name.`
+`void zip::addfile(QString path, QString data); // path is the location where you want to store the data in the compressed file, and data is the data you want to compress (in this code, there is no compression, just putting the files together). `
+`void zip::zipfile(QString OutPutPath); // OutPutPath is the output file name.`
 
 ## Limitations:
 ------------
