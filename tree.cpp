@@ -20,20 +20,6 @@ QByteArray calcFileCRC(QString file)
 
     //    QByteArray bfile=file.toLocal8Bit();
     QByteArray bfile=file.toUtf8();
-    //    qDebug()<<test<<test.size();
-    //    QFile file(fileName);
-    //    bool result = file.open(QFile::ReadOnly);
-    //    if(result) {
-    //        while(!file.atEnd()) {
-    //            QByteArray data = file.read(1024*1024);
-    //            for (auto i = 0; i < data.size(); ++i ) {
-    //                crc32 = crc32Table[ ( crc32 ^ data.constData()[ i ]) & 0xff ] ^ ( crc32 >> 8 );
-    //            }
-    //        }
-    //        crc32 = crc32 ^ 0xffffffffL;
-
-    //        file.close();
-    //    }
     for (auto i = 0; i < bfile.size(); ++i ) {
         crc32 = crc32Table[ ( crc32 ^ bfile.constData()[ i ]) & 0xff ] ^ ( crc32 >> 8 );
     }
